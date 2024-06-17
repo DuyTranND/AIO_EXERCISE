@@ -2,7 +2,8 @@
 def main():
     character_statistic = {}
 
-    word = 'members'
+    word = 'Members'
+    word = word.lower()
 
     for char in word:
         if char in character_statistic:
