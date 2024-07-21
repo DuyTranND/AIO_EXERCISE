@@ -111,3 +111,6 @@ if __name__ == "__main__":
     result = inverse_matrix(m1)
     print(result)
     """
+    a = np.array([1, 2, 3])
+    b = np.array([4, 5, 6])
+    print(compute_cosine(a, b))
