@@ -44,6 +44,17 @@ def inverse_matrix(matrix):
     return inverse
 
 
+def compute_eigenvalues_eigenvectors(matrix):
+    eigenvalues, eigenvectors = np.linalg.eig(matrix)
+    return eigenvalues, eigenvectors
+
+
+def compute_cosine(v1, v2):
+    cos_sim = compute_dot_product(
+        v1, v2) / (compute_vector_length(v1)*compute_vector_length(v2))
+    return cos_sim
+
+
 if __name__ == "__main__":
     """
     #Quiz1
