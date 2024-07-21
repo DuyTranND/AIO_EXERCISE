@@ -32,11 +32,16 @@ def matrix_multi_matrix(matrix1, matrix2):
 
 def inverse_matrix(matrix):
     """ Calculate the inverse of a matrix."""
-    try:
-        result = np.linalg.inv(matrix)
-    except np.linalg.LinAlgError:
-        result = "Non-invertible"
-    return result
+    matrix = np.array(matrix)
+
+    det = matrix[0][0]*matrix[1][1] - matrix[0][1]*matrix[1][0]
+
+    if det != 0:
+        inverse = (
+            1 / det) * np.array([[matrix[1, 1], -matrix[0, 1]], [-matrix[1, 0], matrix[0, 0]]])
+    else:
+        print("Non-invertible")
+    return inverse
 
 
 if __name__ == "__main__":
@@ -95,4 +100,3 @@ if __name__ == "__main__":
     result = inverse_matrix(m1)
     print(result)
     """
-
